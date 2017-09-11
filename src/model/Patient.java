@@ -1,34 +1,46 @@
 package model;
 
-/**
- * Created by muha on 11.09.17.
- */
+
 public class Patient {
-    private String firstName;
-    private String lastName;
+    private String name;
     private String timeOfVisit;
+    private String description;
 
-    public Patient(String firstName, String lastName, String timeOfVisit) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public Patient(String name, String timeOfVisit, String description) {
+        this.name = name;
         this.timeOfVisit = timeOfVisit;
+        this.description = description;
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
+    public String getName() {
+        return name;
     }
 
     public String getTimeOfVisit() {
         return timeOfVisit;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public void setTimeOfVisit(String timeOfVisit) {
         this.timeOfVisit = timeOfVisit;
     }
 
+    public String getDescription() {
+        return description;
+    }
 
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    @Override
+    public String toString() {
+        return "Patient" +
+                "name=" + name + '\'' +
+                ", timeOfVisit='" + timeOfVisit + '\'' +
+                ", description='" + description + '\'' ;
+    }
 }

@@ -12,8 +12,17 @@ public class ConsoleHelper {
         System.out.println(s);
     }
 
-    public static String readString () throws IOException {
-        return reader.readLine();
+    public static String readString (){
+        try {
+            String res = reader.readLine();
+            if (!res.isEmpty()){
+                return res;
+            }
+            else return readString();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     public static int readInt () throws IOException {

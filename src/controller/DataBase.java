@@ -1,3 +1,5 @@
+package controller;
+
 import model.Doctor;
 import view.ConsoleHelper;
 
@@ -26,7 +28,7 @@ public class DataBase {
     }
 
     public Doctor chooseDoctor (){
-        ConsoleHelper.printString("Choose a Doctor, by input his number");
+
         for (int i = 0; i < doctors.size(); i++) {
             Doctor doctor = doctors.get(i);
             ConsoleHelper.printString(i +" "+ doctor.toString());
@@ -38,6 +40,7 @@ public class DataBase {
             return null;
         }
         catch (IllegalArgumentException | IndexOutOfBoundsException e){
+            ConsoleHelper.printString("wrong input, try again");
             return chooseDoctor();
         }
     }
