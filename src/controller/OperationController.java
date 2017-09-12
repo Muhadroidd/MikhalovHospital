@@ -3,7 +3,6 @@ package controller;
 
 import view.ConsoleHelper;
 
-import java.io.IOException;
 
 public class OperationController {
 
@@ -14,7 +13,7 @@ public class OperationController {
         DoctorOperation.printOperations();
         try {
             return operations[ConsoleHelper.readInt()];
-        } catch (IOException | IllegalArgumentException | IndexOutOfBoundsException e) {
+        } catch (IllegalArgumentException | IndexOutOfBoundsException e) {
             ConsoleHelper.printString("Oops wrong input, try again");
             return  chooseOperation();
         }

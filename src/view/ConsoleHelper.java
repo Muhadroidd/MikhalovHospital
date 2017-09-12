@@ -14,19 +14,20 @@ public class ConsoleHelper {
 
     public static String readString (){
         try {
-            String res = reader.readLine();
-            if (!res.isEmpty()){
-                return res;
-            }
-            else return readString();
+            return reader.readLine();
         } catch (IOException e) {
             e.printStackTrace();
+            return null;
         }
-        return null;
     }
 
-    public static int readInt () throws IOException {
+    public static int readInt (){
         return Integer.valueOf(readString());
+    }
+
+    public static String requestString (String msg){
+        printString(msg);
+        return readString();
     }
 
 }

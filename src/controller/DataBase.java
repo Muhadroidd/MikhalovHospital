@@ -3,7 +3,7 @@ package controller;
 import model.Doctor;
 import view.ConsoleHelper;
 
-import java.io.IOException;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -35,11 +35,7 @@ public class DataBase {
         }
         try {
             return doctors.get(ConsoleHelper.readInt());
-        } catch (IOException e) {
-            e.printStackTrace();
-            return null;
-        }
-        catch (IllegalArgumentException | IndexOutOfBoundsException e){
+        }catch (IllegalArgumentException | IndexOutOfBoundsException e){
             ConsoleHelper.printString("wrong input, try again");
             return chooseDoctor();
         }
