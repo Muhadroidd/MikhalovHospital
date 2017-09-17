@@ -11,4 +11,16 @@ public enum DoctorOperation {
             ConsoleHelper.printString(i + " " + DoctorOperation.values()[i].toString());
         }
     }
+
+    public static DoctorOperation chooseOperation (){
+        DoctorOperation [] operations = values();
+        ConsoleHelper.printString("Please chose operation");
+        DoctorOperation.printOperations();
+        try {
+            return operations[ConsoleHelper.readInt()];
+        } catch (IllegalArgumentException | IndexOutOfBoundsException e) {
+            ConsoleHelper.printString("Oops wrong input, try again");
+            return  chooseOperation();
+        }
+    }
 }

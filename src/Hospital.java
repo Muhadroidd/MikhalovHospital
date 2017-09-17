@@ -1,6 +1,5 @@
 import controller.DataBase;
 import controller.DoctorOperation;
-import controller.OperationController;
 import model.Doctor;
 import view.ConsoleHelper;
 
@@ -21,7 +20,7 @@ public class Hospital {
         ConsoleHelper.printString("You have chosen " + doctor.toString());
         DoctorOperation operation;
         do {
-            operation = OperationController.chooseOperation();
+            operation = DoctorOperation.chooseOperation();
             doctor.executeOperation(operation);
         }while (operation != DoctorOperation.Exit);
         ConsoleHelper.printString("Do you want choose another doctor? (Y/N)");
